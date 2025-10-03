@@ -1,0 +1,21 @@
+# Core ML & Data Libraries
+numpy
+pandas
+scipy
+torch
+
+# Method-specific Dependencies
+sentence-transformers
+faiss-cpu # Using CPU version for wider compatibility
+funasr # For emotion2vec audio embedding extraction
+
+# VAD Preprocessing Dependencies
+audonnx
+audeer
+librosa # For audio loading and resampling
+
+# VAD method requires sdialog, installed from git
+git+https://github.com/idiap/sdialog.git
+
+# Utility
+PyYAML
