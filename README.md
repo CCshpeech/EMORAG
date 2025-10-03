@@ -1,4 +1,4 @@
-# EmoRAG: Emotion-Aware Audio Retrieval
+# EmoRAG: Emotion-Centric Audio Retrieval
 
 EmoRAG is a powerful and flexible toolkit for retrieving audio files based on the emotional content of a text query. If you've ever wanted to find a song, a podcast clip, or any audio that matches the feeling of "I am so happy and excited!" or "This is a sad, rainy day," EmoRAG is the tool for you.
 
