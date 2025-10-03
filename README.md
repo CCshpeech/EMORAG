@@ -1,6 +1,8 @@
-# EmoRAG: Emotion-Aware Audio Retrieval
+# EMORAG: Emotion-Centric Prompt Retrieval for Zero-Shot Speech Synthesis
 
-EmoRAG is a powerful and flexible toolkit for retrieving audio files based on the emotional content of a text query. If you've ever wanted to find a song, a podcast clip, or any audio that matches the feeling of "I am so happy and excited!" or "This is a sad, rainy day," EmoRAG is the tool for you.
+This repository contains the official toolkit for the **EMORAG** project. Its core purpose is to serve as an upstream component for zero-shot Text-to-Speech (TTS) and voice cloning systems.
+
+EMORAG's mission is to automatically select an emotionally appropriate audio prompt from a large voice library that matches the emotional content of an input text. This enables a TTS system to synthesize speech that is not only textually correct but also emotionally expressive, without requiring an explicitly emotional TTS model.
 
 This project provides two distinct, state-of-the-art methods for performing this cross-modal retrieval task.
 
