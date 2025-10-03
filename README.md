@@ -1,15 +1,17 @@
 # EmoRAG: Emotion-Centric Audio Retrieval
 
-EmoRAG is a powerful and flexible toolkit for retrieving audio files based on the emotional content of a text query. If you've ever wanted to find a song, a podcast clip, or any audio that matches the feeling of "I am so happy and excited!" or "This is a sad, rainy day," EmoRAG is the tool for you.
+This repository contains the official toolkit for the **EMORAG** project. Its core purpose is to serve as an upstream component for zero-shot Text-to-Speech (TTS) and voice cloning systems.
+
+EMORAG's mission is to automatically select an emotionally appropriate audio prompt from a large voice library that matches the emotional content of an input text. This enables zero-shot TTS system to synthesize speech that is not only textually correct but also emotionally expressive, without manual emotion prompt selection.
 
 This project provides two distinct, state-of-the-art methods for performing this cross-modal retrieval task.
 
 ## Features
 
 - **Dual Retrieval Methods**: Choose between two powerful approaches:
-    1.  **Direct MLP Alignment (Default)**: A simplified and powerful method that maps text embeddings directly to the raw audio embedding space.
-    2.  **PCA-based MLP Alignment**: A legacy method that uses PCA to create a lower-dimensional shared space for text and audio.
-    3.  **VAD-based Matching**: Uses large language models (LLMs) and direct audio analysis to match text and audio in the universal Valence-Arousal-Dominance (VAD) emotional space.
+  1.  **Direct MLP Alignment (Default)**: A simplified and powerful method that maps text embeddings directly to the raw audio embedding space.
+  2.  **PCA-based MLP Alignment**: A legacy method that uses PCA to create a lower-dimensional shared space for text and audio.
+  3.  **VAD-based Matching**: Uses large language models (LLMs) and direct audio analysis to match text and audio in the universal Valence-Arousal-Dominance (VAD) emotional space.
 - **Bring Your Own Audio**: Comes with user-friendly command-line tools to automatically process your personal audio library, making it ready for retrieval.
 - **Simplified Workflow**: A clean, unified interface for downloading models, preprocessing audio, and running retrieval.
 - **Open & Extensible**: The project is structured to be easy to understand, use, and extend with new models or methods.
@@ -46,6 +48,7 @@ The project uses several models. The VAD audio model (`w2v2-vad`) will be downlo
 # From the EmoRAG-infer/ directory
 python download_models.py
 ```
+
 This will download the pre-trained MLP head model (`z_head_L0.pt`) and a PCA projection matrix (`cca_RAW_train.npz`) into the `EmoRAG-infer/models/mlp/` directory.
 
 ### Step 3: Prepare Your Audio Library
@@ -116,5 +119,7 @@ If you are interested in training your own models, please refer to the comprehen
 ## License
 
 This project is open-source. Please add a license file (e.g., MIT, Apache 2.0) to define how others can use your code.
+
+```
 
 ```
