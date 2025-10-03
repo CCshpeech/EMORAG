@@ -1,8 +1,7 @@
-# EMORAG: Emotion-Centric Prompt Retrieval for Zero-Shot Speech Synthesis
-
+# EmoRAG: Emotion-Centric Audio Retrieval
 This repository contains the official toolkit for the **EMORAG** project. Its core purpose is to serve as an upstream component for zero-shot Text-to-Speech (TTS) and voice cloning systems.
 
-EMORAG's mission is to automatically select an emotionally appropriate audio prompt from a large voice library that matches the emotional content of an input text. This enables a TTS system to synthesize speech that is not only textually correct but also emotionally expressive, without requiring an explicitly emotional TTS model.
+EMORAG's mission is to automatically select an emotionally appropriate audio prompt from a large voice library that matches the emotional content of an input text. This enables zero-shot TTS system to synthesize speech that is not only textually correct but also emotionally expressive, without manual emotion prompt selection.
 
 This project provides two distinct, state-of-the-art methods for performing this cross-modal retrieval task.
 
