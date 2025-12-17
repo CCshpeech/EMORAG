@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmoRAG: Emotion-Centric Prompt Retrieval for Zero-Shot Speech Synthesis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- --- Hero Section --- -->
+    <header class="hero">
+        <div class="container">
+            <h1>EmoRAG: Emotion-Centric Prompt Retrieval for Zero-Shot Speech Synthesis</h1>
+            <p class="lead">
+                Yiyang Chen<sup>1</sup>, Tianze Xu<sup>1</sup>, Srikanth Madikeri<sup>1</sup>, Sergio Burdisso<sup>2</sup>, Volker Dellwo<sup>1</sup>, Petr Motlicek<sup>2,3</sup>
+            </p>
+            <p>
+                <sup>1</sup>Department of Computational Linguistics, University of Zurich<br>
+                <sup>2</sup>Idiap Research Institute, Martigny, Switzerland<br>
+                <sup>3</sup>Brno University of Technology, Czechia
+            </p>
+            <p>
+                <a href="#" class="btn btn-primary">Paper</a>
+                <a href="https://github.com/CCshpeech/EMORAG" class="btn btn-outline-secondary">Code</a>
+            </p>
+        </div>
+    </header>
+
+    <!-- --- Main Content --- -->
+    <main class="content-section">
+        <div class="container">
+            <div class="row">
+                <!-- Abstract -->
+                <div class="col-lg-6">
+                    <div class="section-card h-100">
+                        <h2>Abstract</h2>
+                        <p>
+                        Zero-shot text-to-speech (TTS) has recently achieved remarkable naturalness and expressiveness. The latest TTS models such as IndexTTS2 can even accept separate speaker and emotion prompts. Effective emotional control therefore hinges on the appropriate selection of emotion prompts. However, existing research on automated audio prompt selection has mainly focused on contextual relevance, speaker identity or coarse categorical emotions, without employing standardized retrieval paradigms or unsupervised label-free alignment. To fill this gap, we propose two complementary approaches for automatic prompt selection driven by emotion. The first formulates retrieval as continuous affect matching in Valence--Arousal--Dominance (VAD) space, where an LLM predicts target coordinates from text and matches them with pre-indexed audio prompts. The second approach eliminates labels entirely, learning a shared cross-modal representation space directly from paired text--audio data. Listening evaluations indicate that both approaches outperform the neutral baseline, with the VAD-guided method showing the strongest gains in EP-MOS and the label-free method achieving the highest SS-MOS.
+                        </p>
+                    </div>
+                </div>
+                <!-- Architecture -->
+                <div class="col-lg-6">
+                    <div class="section-card h-100">
+                        <h2>Architecture</h2>
+                        <img src="images/flowchart.png" alt="Model Architecture" class="img-fluid rounded">
+                        <p class="mt-3 text-center"><em>Figure 1: The architecture of our proposed model.</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Audio Samples -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="audio-table-container">
+                        <h2>Audio Samples</h2>
+                        <table class="table">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Text</th>
+                                    <th>Emotion</th>
+                                    <th>VAD</th>
+                                    <th>Neutral</th>
+                                    <th>2d</th>
+                                    <th>3d</th>
+                                    <th>L0</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>I declare this project a complete success!</td>
+                                    <td>confidence/joy</td>
+                                    <td>(7,6,7)</td>
+                                    <td><audio controls src="audio/ICASSP-sample/I declare this project a complete success!/neutral/Gen03.wav"></audio></td>
+                                    <td><audio controls src="audio/ICASSP-sample/I declare this project a complete success!/2d/GEN_MSP-PODCAST_1829_0194.wav"></audio></td>
+                                    <td><audio controls src="audio/ICASSP-sample/I declare this project a complete success!/3d/GEN_MSP-PODCAST_2352_0570.wav"></audio></td>
+                                    <td><audio controls src="audio/ICASSP-sample/I declare this project a complete success!/L0/GEN_MSP-PODCAST_2330_1028.wav"></audio></td>
+                                </tr>
+                                <tr>
+                                    <td>Get out of my face right now!</td>
+                                    <td>anger</td>
+                                    <td>(1,6,6)</td>
+                                    <td><audio controls src="audio/ICASSP-sample/Get out of my face right now!/neutral/Gen01.wav"></audio></td>
+                                    <td><audio controls src="audio/ICASSP-sample/Get out of my face right now!/2d/GEN_MSP-PODCAST_1495_0741_0008.wav"></audio></td>
+                                    <td><audio controls src="audio/ICASSP-sample/Get out of my face right now!/3d/GEN_MSP-PODCAST_2313_0397.wav"></audio></td>
+                                    <td><audio controls src="audio/ICASSP-sample/Get out of my face right now!/L0/GEN_GEN_MSP-PODCAST_3947_0253.wav"></audio></td>
+                                </tr>
+                                <tr>
+                                    <td>Help me! I'm so scared!</td>
+                                    <td>fear/helplessness</td>
+                                    <td>(1,6,1)</td>
+                                    <td><audio controls src="audio/ICASSP-sample/Help me! I_m so scared!/neutral/Gen02.wav"></audio></td>
+                                    <td><audio controls src="audio/ICASSP-sample/Help me! I_m so scared!/2d/GEN_GEN_MSP-PODCAST_0120_0235.wav"></audio></td>
+                                    <td><audio controls src="audio/ICASSP-sample/Help me! I_m so scared!/3d/GEN_GEN_MSP-PODCAST_4444_0091.wav"></audio></td>
+                                    <td><audio controls src="audio/ICASSP-sample/Help me! I_m so scared!/L0/GEN_MSP-PODCAST_4780_0073.wav"></audio></td>
+                                </tr>
+                                <tr>
+                                    <td>I feel so tired and empty.</td>
+                                    <td>fatigue/emptiness</td>
+                                    <td>(2,1,2)</td>
+                                    <td><audio controls src="audio/ICASSP-sample/I feel so tired and empty/neutral/Gen04.wav"></audio></td>
+                                    <td><audio controls src="audio/ICASSP-sample/I feel so tired and empty/2d/GEN_MSP-PODCAST_1810_0082.wav"></audio></td>
+                                    <td><audio controls src="audio/ICASSP-sample/I feel so tired and empty/3d/GEN_GEN_MSP-PODCAST_1810_0529.wav"></audio></td>
+                                    <td><audio controls src="audio/ICASSP-sample/I feel so tired and empty/L0/GEN_GEN_MSP-PODCAST_0498_0450.wav"></audio></td>
+                                </tr>
+                                <tr>
+                                    <td>I am going downstairs to buy a bottle of water.</td>
+                                    <td>neutral</td>
+                                    <td>(4,3,5)</td>
+                                    <td><audio controls src="audio/ICASSP-sample/I am going downstairs to buy a bottle of water/neutral/Gen05.wav"></audio></td>
+                                    <td><audio controls src="audio/ICASSP-sample/I am going downstairs to buy a bottle of water/2d/GEN_MSP-PODCAST_0003_0052.wav"></audio></td>
+                                    <td><audio controls src="audio/ICASSP-sample/I am going downstairs to buy a bottle of water/3d/GEN_GEN_MSP-PODCAST_0061_0049.wav"></audio></td>
+                                    <td><audio controls src="audio/ICASSP-sample/I am going downstairs to buy a bottle of water/L0/GEN_MSP-PODCAST_2055_0989.wav"></audio></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

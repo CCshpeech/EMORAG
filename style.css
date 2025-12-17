@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.8;
+    color: #444;
+    background-color: #f4f7f6;
+}
+
+/* --- Hero Header --- */
+.hero {
+    background-color: #ffffff;
+    padding: 4rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.hero h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.hero .lead {
+    color: #666;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero .btn {
+    font-weight: 700;
+    padding: 0.75rem 1.5rem;
+    margin: 0 0.5rem;
+    border-radius: 50px; /* Pill-shaped buttons */
+    transition: all 0.3s ease;
+}
+
+/* --- Main Content --- */
+.content-section {
+    padding: 4rem 0;
+}
+
+.section-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    margin-bottom: 2rem;
+}
+
+.section-card h2 {
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-card h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #0d6efd; /* Bootstrap primary color */
+}
+
+/* --- Audio Table --- */
+.audio-table-container {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+
+.audio-table-container h2 {
+     font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.audio-table-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #0d6efd;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table thead th {
+    font-weight: 700;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom-width: 2px;
+}
+
+.table tbody td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+audio {
+    width: 100%;
+    min-width: 180px; /* Ensure player is not too small */
+    height: 40px;
+}
